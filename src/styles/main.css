@@ -1,0 +1,92 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3a3139;
+    user-select: none;
+}
+
+.container {
+position: relative;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 30px;
+background-image: linear-gradient(135deg, #03001e 0%, #5242b1 30%, #465d77 70%, #ffffff 100%);
+padding: 40px 60px;
+}
+
+h2 {
+    font-size: 4em;
+    -webkit-text-stroke: 2px black;
+    color:#fdeff9;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;   
+}
+
+.reset {
+    padding: 15px 20px;
+    width: 100%;
+    color:#03001e;
+    background-color: #fdeff9;
+    font-size: 1.5em;
+    border: none;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.reset:focus{
+    color:#5338ec;
+    background-color: #262809;
+}
+
+.game{
+    width: 430px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3b88bb;
+    font-size: 3em;
+    transform: rotateY(0deg);
+    transition: 0.4s;
+}
+
+.item::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #3b88bb;
+    background-image: url("../images/yugioh.webp");
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center;
+    /*opacity: 0.85;*/
+    transition: 0.4s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.boxOpen::after,
+.boxMatch::after {
+    transform: rotateY(180deg);
+}
