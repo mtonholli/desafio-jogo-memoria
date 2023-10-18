@@ -70,7 +70,7 @@ if(document.querySelectorAll(".boxMatch").length === emojis.length) {
 }
 
 function playSound(audioName) {
-    let audio = new Audio(`/src/sounds/${audioName}.wav`);
+    let audio = new Audio(`./src/sounds/${audioName}.wav`);
     audio.volume = 0.5;
     audio.play();
 }
